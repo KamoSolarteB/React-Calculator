@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { Context } from '../context/Context'
 
 function Equal({ type }) {
-  const { calculate, operatorStyle } = useContext(Context)
+  const { calculate, digitStyle } = useContext(Context)
 
   return (
-    <button className={operatorStyle} onClick={calculate}>
+    <button className={digitStyle} onClick={calculate}>
       {type}
     </button>
   )

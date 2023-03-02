@@ -22,7 +22,7 @@ function App() {
           {calc || "0"}
         </div>
 
-        <div className="operator digits">
+        <div className="flex">
           <OperatorBtn operator="/" />
           <OperatorBtn operator="*" />
           <OperatorBtn operator="+" />
@@ -31,7 +31,7 @@ function App() {
           <DeleteBtn type="DEL" />
         </div>
 
-        <div className="digits">
+        <div className="flex flex-wrap">
           {createDigits()}
           <DigitBtn dig="0" />
           <DigitBtn dig="." />
