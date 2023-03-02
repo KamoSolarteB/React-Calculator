@@ -1,17 +1,19 @@
-import React, { useContext } from 'react'
-import { Context } from './context/Context'
-import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from './components'
+import React, { useContext } from "react";
+import { Context } from "./context/Context";
+import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from "./components";
 
 function App() {
-  const { createDigits, calc, result } = useContext(Context)
+  const { createDigits, calc, result } = useContext(Context);
   return (
-    <div className='container'>
-      <div className='calculadora'>
-        <div className='screen'>
-          
+    <div className="container">
+      <div className="calculadora">
+        <div className="screen">
+          {result ? <span>({result})</span> : ""}
+          &nbsp;
+          {calc || "0"}
         </div>
 
-        <div className='operator digits'>
+        <div className="operator digits">
           <OperatorBtn operator="/" />
           <OperatorBtn operator="*" />
           <OperatorBtn operator="+" />
@@ -20,7 +22,7 @@ function App() {
           <DeleteBtn type="DEL" />
         </div>
 
-        <div className='digits'>
+        <div className="digits">
           {createDigits()}
           <DigitBtn dig="0" />
           <DigitBtn dig="." />
@@ -29,7 +31,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
