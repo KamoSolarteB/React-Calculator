@@ -3,7 +3,7 @@ import { Context } from "./context/Context";
 import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from "./components";
 
 function App() {
-  const { createDigits, calc, result } = useContext(Context);
+  const { createDigits, calc, result } = useContext(Context)
   return (
     <div className="container">
       <div className="calculadora">
