@@ -19,10 +19,11 @@ export function ContextProvider(props) {
   let digitStyle = "flex-[1_1_33.333%] max-w-[33.333] bg-[#131a26]";
 
   /* Calculator style */
-  let app = "flex min-h-screen items-center justify-center p-4";
+  let app = "flex min-h-screen items-center justify-center p-4 bg-slate-700";
   let calculator = "w-full max-w-[400px] bg-white rounded-[16px] overflow-hidden shadow-[20px_20px_64px_rgba(0,0,0,1)] dark:bg-black";
   let screen = "p-4 text-right bg-[#131a26] text-[#eee] text-2xl font-light";
   let res = "text-sm text-[#888]";
+  let deleteAllStyle = "flex-1 bg-[#d81e5b] font-bold w-full justify-center";
 
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
@@ -72,6 +73,16 @@ export function ContextProvider(props) {
     setCalc(value)
   }
 
+  const deleteAll = () => {
+    if (calc == "") {
+      return
+    }
+
+    const value = calc.slice(0, -calc.length)
+    setCalc(value)
+    setResult(0)
+  }
+
   return (
     <Context.Provider
       value={{
@@ -79,6 +90,7 @@ export function ContextProvider(props) {
         updateCalc,
         calculate,
         deleteLast,
+        deleteAll,
         calc,
         result,
         operatorStyle,
@@ -88,6 +100,7 @@ export function ContextProvider(props) {
         calculator,
         screen,
         res,
+        deleteAllStyle,
       }}
     >
       {props.children}

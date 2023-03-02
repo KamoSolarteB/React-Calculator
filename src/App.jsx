@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "./context/Context";
-import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from "./components";
+import { DeleteAll, DeleteBtn, DigitBtn, Equal, OperatorBtn } from "./components";
 
 function App() {
   const {
@@ -38,6 +38,7 @@ function App() {
 
           <Equal type="=" />
         </div>
+        <DeleteAll type="SUPR" />
       </div>
     </div>
   );
