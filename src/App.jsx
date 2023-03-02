@@ -1,10 +1,16 @@
 import React, { useContext } from 'react'
-import { Context } from './context/Context'
+// import { Context } from './context/Context'
+import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from './components'
 
 function App() {
-  const { phrase } = useContext(Context)
+  // const { phrase } = useContext(Context)
   return (
-    <div>{phrase}</div>
+    <div>
+      <DeleteBtn/>
+      <DigitBtn/>
+      <Equal/>
+      <OperatorBtn/>
+    </div>
   )
 }
 
