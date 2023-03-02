@@ -5,7 +5,7 @@ function DeleteBtn({ type }) {
   const { deleteLast } = useContext(Context)
 
   return (
-    <button onClick={deleteLast}>
+    <button className={deleteStyle} onClick={deleteLast}>
       {type}
     </button>
   )

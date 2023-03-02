@@ -3,12 +3,21 @@ import { Context } from "./context/Context";
 import { DeleteBtn, DigitBtn, Equal, OperatorBtn } from "./components";
 
 function App() {
-  const { createDigits, calc, result } = useContext(Context)
+  const {
+    createDigits,
+    calc,
+    result,
+    app,
+    calculator,
+    screen,
+    res,
+  } = useContext(Context);
+
   return (
-    <div className="container">
-      <div className="calculadora">
-        <div className="screen">
-          {result ? <span>({result})</span> : ""}
+    <div className={app}>
+      <div className={calculator}>
+        <div className={screen}>
+          {result ? <span className={res}>({result})</span> : ""}
           &nbsp;
           {calc || "0"}
         </div>
