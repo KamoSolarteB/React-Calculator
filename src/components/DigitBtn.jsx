@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../context/Context'
 
-function DigitBtn() {
+function DigitBtn({ dig }) {
+  const { updateCalc } = useContext(Context)
+
   return (
-    <button>DigitBtn</button>
+    <button onClick={() => updateCalc(dig.string)}>
+      {dig}
+    </button>
   )
 }
 

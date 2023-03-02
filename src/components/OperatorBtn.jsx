@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../context/Context'
 
-function OperatorBtn() {
+function OperatorBtn({ operator }) {
+  const { updateCalc } = useContext(Context)
+
   return (
-    <button>OperatorBtn</button>
+    <button onClick={() => updateCalc(operator)}>
+      {operator}
+    </button>
   )
 }
 
