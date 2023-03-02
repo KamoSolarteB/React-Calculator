@@ -13,9 +13,16 @@ export function ContextProvider(props) {
  * light: #eee
  */
 
+  /* Button style */
   let operatorStyle = "flex-1 bg-[#51bf87] font-bold";
-  let deleteStyle = "flex-1 bg-[#d81e5b] font-bold"
+  let deleteStyle = "flex-1 bg-[#d81e5b] font-bold";
   let digitStyle = "flex-[1_1_33.333%] max-w-[33.333] bg-[#131a26]";
+
+  /* Calculator style */
+  let app = "flex min-h-screen items-center justify-center p-4";
+  let calculator = "w-full max-w-[400px] bg-white rounded-[16px] overflow-hidden shadow-[20px_20px_64px_rgba(0,0,0,1)] dark:bg-black";
+  let screen = "p-4 text-right bg-[#131a26] text-[#eee] text-2xl font-light";
+  let res = "text-sm text-[#888]";
 
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
@@ -77,6 +84,10 @@ export function ContextProvider(props) {
         operatorStyle,
         deleteStyle,
         digitStyle,
+        app,
+        calculator,
+        screen,
+        res,
       }}
     >
       {props.children}
