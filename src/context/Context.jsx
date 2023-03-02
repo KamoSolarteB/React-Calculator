@@ -4,6 +4,19 @@ import { DigitBtn } from "../components";
 export const Context = createContext();
 
 export function ContextProvider(props) {
+
+  /**
+ * Styles:
+ * primary: #d81e5b
+ * secondary: #131a26
+ * dark: #131a26
+ * light: #eee
+ */
+
+  let operatorStyle = "flex-1 bg-[#51bf87] font-bold";
+  let deleteStyle = "flex-1 bg-[#d81e5b] font-bold"
+  let digitStyle = "flex-[1_1_33.333%] max-w-[33.333] bg-[#131a26]";
+
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
 
@@ -61,6 +74,9 @@ export function ContextProvider(props) {
         deleteLast,
         calc,
         result,
+        operatorStyle,
+        deleteStyle,
+        digitStyle,
       }}
     >
       {props.children}
