@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { Context } from '../context/Context'
 
 function DigitBtn({ dig }) {
-  const { updateCalc } = useContext(Context)
+  const { updateCalc, digitStyle } = useContext(Context)
 
   return (
-    <button onClick={() => updateCalc(dig.toString())}>
+    <button className={digitStyle} onClick={() => updateCalc(dig.toString())}>
       {dig}
     </button>
   )

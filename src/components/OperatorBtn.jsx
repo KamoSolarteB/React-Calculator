@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { Context } from '../context/Context'
 
 function OperatorBtn({ operator }) {
-  const { updateCalc } = useContext(Context)
+  const { updateCalc, operatorStyle } = useContext(Context)
 
   return (
-    <button onClick={() => updateCalc(operator)}>
+    <button className={operatorStyle} onClick={() => updateCalc(operator)}>
       {operator}
     </button>
   )
